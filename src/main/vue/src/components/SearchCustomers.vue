@@ -18,7 +18,7 @@
 </template>
 
 <script>
-    import http from "../mixins/http-connector";
+    import http from "../assets/http-connector";
 
     export default {
         name: "search-customer",

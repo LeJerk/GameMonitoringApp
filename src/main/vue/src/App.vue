@@ -1,8 +1,7 @@
 <template>
     <div class="container-fluid" id="app">
         <div class="site-info">
-            <h1>Game monitoring application</h1>
-            <h3>XOXO</h3>
+            <h1>Game monitoring app</h1>
         </div>
         <nav>
             <router-link class="btn btn-primary" to="/">Customers</router-link>
