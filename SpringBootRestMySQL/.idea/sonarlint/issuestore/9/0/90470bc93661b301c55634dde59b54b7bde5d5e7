@@ -1,0 +1,16 @@
+
+squid:S1488#"aImmediately return this expression instead of assigning it to the temporary variable "customers".(öøñŸ8‡¸ƒ‚-
+O
+squid:S1062"9Replace this use of System.out or System.err by a logger.(ê™íß
+hsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(îˆ¿y8Á¶‚-
+O
+squid:S106>"9Replace this use of System.out or System.err by a logger.(ïÚ
+¤squid:S11868"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‹‹ÚÌùÿÿÿÿ8÷Ë‡‚-
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(•Ó‰²8ü‚-
+nsquid:CommentedOutCodeLine@"<This block of commented-out lines of code should be removed.(ÀÿÛªûÿÿÿÿ8®Š‚-
+squid:S1488,"aImmediately return this expression instead of assigning it to the temporary variable "_customer".(µƒ8ÑÀ„‚-
+O
+squid:S106!"9Replace this use of System.out or System.err by a logger.(ƒœğÏ
+psquid:S00117,"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µƒ8ÑÀ„‚-
+isquid:CommentedOutCodeLineB"<This block of commented-out lines of code should be removed.(şœË¥8®Š‚-
+isquid:CommentedOutCodeLine$"<This block of commented-out lines of code should be removed.( İ€8‡¸ƒ‚-
