@@ -20,37 +20,37 @@
 </template>
 
 <script>
-    import http from "../assets/http-connector";
+    import http from '../../assets/http-connector'
 
     export default {
-        name: "customers-list",
+        name: 'customers-list',
         data() {
             return {
                 customers: []
-            };
+            }
         },
         methods: {
             /* eslint-disable no-console */
             retrieveCustomers() {
                 http
-                    .get("/customers")
+                    .get('/customers')
                     .then(response => {
-                        this.customers = response.data; // JSON are parsed automatically.
-                        console.log(response.data);
+                        this.customers = response.data // JSON are parsed automatically.
+                        console.log(response.data)
                     })
                     .catch(e => {
-                        console.log(e);
-                    });
+                        console.log(e)
+                    })
             },
             refreshList() {
-                this.retrieveCustomers();
+                this.retrieveCustomers()
             }
             /* eslint-enable no-console */
         },
         mounted() {
-            this.retrieveCustomers();
+            this.retrieveCustomers()
         }
-    };
+    }
 </script>
 
 <style>

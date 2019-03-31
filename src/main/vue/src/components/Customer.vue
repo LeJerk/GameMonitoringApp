@@ -27,11 +27,11 @@
 </template>
 
 <script>
-    import http from "../assets/http-connector";
+    import http from '../assets/http-connector'
 
     export default {
-        name: "customer",
-        props: ["customer"],
+        name: 'customer',
+        props: ['customer'],
         methods: {
             /* eslint-disable no-console */
             updateActive(status) {
@@ -40,31 +40,31 @@
                     name: this.customer.name,
                     age: this.customer.age,
                     active: status
-                };
+                }
 
                 http
-                    .put("/customer/" + this.customer.id, data)
+                    .put('/customer/' + this.customer.id, data)
                     .then(response => {
-                        this.customer.active = response.data.active;
-                        console.log(response.data);
+                        this.customer.active = response.data.active
+                        console.log(response.data)
                     })
                     .catch(e => {
-                        console.log(e);
-                    });
+                        console.log(e)
+                    })
             },
             deleteCustomer() {
                 http
-                    .delete("/customer/" + this.customer.id)
+                    .delete('/customer/' + this.customer.id)
                     .then(response => {
-                        console.log(response.data);
-                        this.$emit("refreshData");
-                        this.$router.push('/');
+                        console.log(response.data)
+                        this.$emit('refreshData')
+                        this.$router.push('/')
                     })
                     .catch(e => {
-                        console.log(e);
-                    });
+                        console.log(e)
+                    })
             }
             /* eslint-enable no-console */
         }
-    };
+    }
 </script>

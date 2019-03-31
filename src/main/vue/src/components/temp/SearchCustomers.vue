@@ -18,32 +18,32 @@
 </template>
 
 <script>
-    import http from "../assets/http-connector";
+    import http from '../../assets/http-connector'
 
     export default {
-        name: "search-customer",
+        name: 'search-customer',
         data() {
             return {
                 age: 0,
                 customers: []
-            };
+            }
         },
         methods: {
             /* eslint-disable no-console */
             searchCustomers() {
                 http
-                    .get("/customers/age/" + this.age)
+                    .get('/customers/age/' + this.age)
                     .then(response => {
-                        this.customers = response.data; // JSON are parsed automatically.
-                        console.log(response.data);
+                        this.customers = response.data // JSON are parsed automatically.
+                        console.log(response.data)
                     })
                     .catch(e => {
-                        console.log(e);
-                    });
+                        console.log(e)
+                    })
             }
             /* eslint-enable no-console */
         }
-    };
+    }
 </script>
 
 <style>

@@ -2,21 +2,37 @@
   "name": "game-monitoring-app",
   "version": "1.0.0",
   "private": true,
+  "description": "",
+  "author": "",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  "main": "babel.config.js",
   "dependencies": {
     "axios": "^0.18.0",
-    "vue": "^2.5.17",
-    "vue-router": "^3.0.1"
+    "eslint-config-standard": "^12.0.0",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.2",
+    "vue-vanilla-datetime-picker": "^1.1.6"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.1",
-    "@vue/cli-plugin-eslint": "^3.0.1",
-    "@vue/cli-service": "^3.0.1",
-    "vue-template-compiler": "^2.5.17"
+    "@vue/cli-plugin-babel": "^3.5.3",
+    "@vue/cli-plugin-eslint": "^3.5.1",
+    "@vue/cli-service": "^3.5.3",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.12.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^5.2.2",
+    "eslit": "^6.0.0",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.29.6"
   },
   "eslintConfig": {
     "root": true,
@@ -25,7 +41,8 @@
     },
     "extends": [
       "plugin:vue/essential",
-      "eslint:recommended"
+      "eslint:recommended",
+      "@vue/standard"
     ],
     "rules": {},
     "parserOptions": {
@@ -41,5 +58,7 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "keywords": [],
+  "license": "ISC"
 }

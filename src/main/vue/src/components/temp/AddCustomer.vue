@@ -22,20 +22,20 @@
 </template>
 
 <script>
-    import http from "../assets/http-connector";
+    import http from '../../assets/http-connector'
 
     export default {
-        name: "add-customer",
+        name: 'add-customer',
         data() {
             return {
                 customer: {
                     id: 0,
-                    name: "",
+                    name: '',
                     age: 0,
                     active: false
                 },
                 submitted: false
-            };
+            }
         },
         methods: {
             /* eslint-disable no-console */
@@ -46,7 +46,7 @@
                 };
 
                 http
-                    .post("/customer", data)
+                    .post('/customer', data)
                     .then(response => {
                         this.customer.id = response.data.id;
                         console.log(response.data);
@@ -61,9 +61,8 @@
                 this.submitted = false;
                 this.customer = {};
             }
-            /* eslint-enable no-console */
         }
-    };
+    }
 </script>
 
 <style>
