@@ -1,0 +1,27 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "google",
+    "plugin:vue/essential",
+    "eslint:recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "ecmaVersion": 8,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": [
+    "vue"
+  ],
+  "rules": {
+  }
+}
