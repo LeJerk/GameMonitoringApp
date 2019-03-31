@@ -27,7 +27,7 @@
 </template>
 
 <script>
-    import http from '../assets/http-connector'
+    import http from '../../assets/http-connector'
 
     export default {
         name: 'customer',

@@ -1,33 +1,32 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-// import CustomersList from '../components/CustomersList.vue';
-import AddCustomer from '../components/temp/AddCustomer.vue';
-import SearchCustomers from '../components/temp/SearchCustomers.vue';
-// import Customer from '../components/Customer.vue';
-import App from '../components/App';
+
+import WalletTraffic from "../components/wallet-traffic/WalletTraffic";
+import Dashboard from "../components/dashboard/Dashboard";
 
 Vue.use(Router);
 
-export default new Router({
-
-  mode: 'history',
-  routes: [
-    {
-      path: '/',
-      name: 'app',
-      component: App,
-    },
-    {
-      path: '/add',
-      name: 'add',
-      component: AddCustomer,
-    },
-    {
-      path: '/search',
-      name: 'search',
-      component: SearchCustomers,
-    },
-  ],
+export default new Router
+({
+    mode: 'history',
+    routes: [
+        {
+            path: '/',
+            redirect: {
+                name: "dashboard"
+            }
+        },
+        {
+            path: '/dashboard',
+            name: 'dashboard',
+            component: Dashboard,
+        },
+        {
+            path: '/wallet-traffic',
+            name: 'wallet-traffic',
+            component: WalletTraffic,
+        }
+    ],
 });
 
 // mode: 'history',

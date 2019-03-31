@@ -126,5 +126,5 @@
 </script>
 
 <style scoped>
-    @import "dashboard.css";
+    @import "../../assets/styles/dashboard.scss";
 </style>
