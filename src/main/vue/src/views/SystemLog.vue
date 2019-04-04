@@ -1,40 +1,5 @@
 <template>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th>System</th>
-                        <th>Number of Logs</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr class="pointer" click.delegate="showSystem(system)" repeat.for="system of systems">
-                        <td>${system.Name}</td>
-                        <td><span animateonchange.bind="system.NumberOfLogs">${system.NumberOfLogs}</span></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="row" if.bind="currentSystem">
-            <div class="col-sm-12">
-                <h2>${currentSystem.name}</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="btn-group" role="group">
-                    <button class="btn ${loglevel.css} ${loglevel.active === true ? 'active' : ''} btn-sm"
-                            click.delegate="showLogsForLoglevel(loglevel)"
-                            repeat.for="loglevel of loglevels"
-                            type="button">
-                        ${loglevel.name}&nbsp;(${loglevel.logs})
-                    </button>
-                </div>
-            </div>
-        </div>
+    <div id="system-log">
         <div class="row">
             <div class="col-sm-12 top-buffer">
                 <div class="collapse filter-panel" id="filter-panel">
@@ -119,12 +84,11 @@
 </template>
 
 <script>
-    // import DateTimePicker from 'vue-vanilla-datetime-picker';
     export default {
-        name: "Dashboard"
+        name: "SystemLog"
     }
 </script>
 
 <style scoped>
-    @import "../../assets/styles/dashboard.scss";
+    @import "../assets/scss/dashboard.scss";
 </style>

@@ -1,8 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import WalletTraffic from "../components/wallet-traffic/WalletTraffic";
-import Dashboard from "../components/dashboard/Dashboard";
+import WalletTraffic from "../views/WalletTraffic";
+import Dashboard from "../views/Dashboard";
+import SystemLog from "../views/SystemLog";
 
 Vue.use(Router);
 
@@ -25,6 +26,11 @@ export default new Router
             path: '/wallet-traffic',
             name: 'wallet-traffic',
             component: WalletTraffic,
+        },
+        {
+            path: '/system-log',
+            name: 'system-log',
+            component: SystemLog,
         }
     ],
 });

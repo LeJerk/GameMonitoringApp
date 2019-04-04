@@ -11,6 +11,7 @@
   },
   "main": "babel.config.js",
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.8.1",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.16",
@@ -20,11 +21,16 @@
     "vue-vanilla-datetime-picker": "^1.1.6"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-regular-svg-icons": "^5.8.1",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/vue-fontawesome": "^0.1.6",
     "@vue/cli-plugin-babel": "^3.5.3",
     "@vue/cli-plugin-eslint": "^3.5.1",
     "@vue/cli-service": "^3.5.3",
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.0.1",
+    "css-loader": "^2.1.1",
     "eslint": "^5.16.0",
     "eslint-config-google": "^0.12.0",
     "eslint-plugin-import": "^2.16.0",
@@ -33,9 +39,13 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^5.2.2",
     "eslit": "^6.0.0",
+    "luxon": "^1.12.0",
+    "style-loader": "^0.23.1",
+    "vue-datetime": "^1.0.0-beta.10",
     "vue-loader": "^15.7.0",
     "vue-template-compiler": "^2.6.10",
-    "webpack": "^4.29.6"
+    "webpack": "^4.29.6",
+    "weekstart": "^1.0.0"
   },
   "eslintConfig": {
     "root": true,

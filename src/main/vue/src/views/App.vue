@@ -5,8 +5,8 @@
     </div>
 </template>
 
-<script defer>
-    import NavBar from "./navbar/NavBar";
+<script>
+    import NavBar from "../components/navbar/NavBar";
 
     export default {
         name: 'App',
@@ -16,6 +16,6 @@
     };
 </script>
 
-<style>
-    @import '../assets/styles/app.scss';
+<style scoped>
+    @import '../assets/scss/app.scss';
 </style>

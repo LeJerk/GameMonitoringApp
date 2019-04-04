@@ -1,0 +1,26 @@
+.panel {
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.panel-default {
+  border-color: #ddd;
+}
+
+.panel-body {
+  padding: 1em 1em 0 1em;
+}
+
+.form-inline .form-group {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.form-inline .form-control {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+}
