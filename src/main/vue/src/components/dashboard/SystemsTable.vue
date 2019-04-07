@@ -1,17 +1,17 @@
 <template>
-    <div class="row">
-        <div class="col-md">
+    <b-row>
+        <b-col md>
             <b-table
-                    :fields="fields"
-                    :items="services"
-                    @row-clicked="showDetails"
                     hover
                     responsive
                     small
+                    :fields="fields"
+                    :items="services"
+                    @row-clicked="showDetails"
                     striped>
             </b-table>
-        </div>
-    </div>
+        </b-col>
+    </b-row>
 </template>
 
 <script>

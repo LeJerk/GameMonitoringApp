@@ -1,27 +1,29 @@
 <template>
-    <div id="dashboard">
+    <b-container fluid>
         <SystemsTable v-on:systemChanged="systemChanged"/>
-        <div class="row">
-            <div class="col-md ml-1 mb-2">
+        <b-row>
+            <b-col class="ml-1 mb-2" md>
                 <h3>{{ this.selectedSystem.system }}</h3>
-            </div>
-        </div>
+            </b-col>
+        </b-row>
         <LogLevelsFilter/>
-        <FilterOptions/>
-    </div>
+        <LogDataTable/>
+        <b-row class="white-noise">
+        </b-row>
+    </b-container>
 </template>
 
 <script>
     import SystemsTable from "../components/dashboard/SystemsTable";
     import LogLevelsFilter from "../components/dashboard/LogLevelsFilter";
-    import FilterOptions from "../components/dashboard/FilterOptions";
+    import LogDataTable from "../components/dashboard/LogDataTable";
 
     export default {
         name: "Dashboard",
         components: {
+            LogDataTable,
             SystemsTable,
-            LogLevelsFilter,
-            FilterOptions
+            LogLevelsFilter
         },
         data() {
             return {

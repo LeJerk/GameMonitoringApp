@@ -1,97 +1,101 @@
 .start button.active {
-    font-style: italic;
+  font-style: italic;
 }
 
 .top-buffer {
-    margin-top: 1em;
+  margin-top: 1em;
 }
 
 .aut-sort:before {
-    font-family: FontAwesome;
-    padding-right: 0.5em;
-    width: 1.28571429em;
-    display: inline-block;
-    text-align: center;
+  font-family: FontAwesome;
+  padding-right: 0.5em;
+  width: 1.28571429em;
+  display: inline-block;
+  text-align: center;
 }
 
 .aut-sortable:before {
-    content: "\f0dc";
+  content: "\f0dc";
 }
 
 .aut-asc:before {
-    content: "\f160";
+  content: "\f160";
 }
 
 .aut-desc:before {
-    content: "\f161";
+  content: "\f161";
 }
 
 .logMsg {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .aut-row-selected {
-    white-space: pre-wrap;
+  white-space: pre-wrap;
 }
 
 .pagination {
-    margin: 0 0 1em 0;
+  margin: 0 0 1em 0;
 }
 
 .search-filter {
-    margin: 1em 1em 0 0.5em;
-    width: 25%;
-    display: inline;
+  margin: 1em 1em 0 0.5em;
+  width: 25%;
+  display: inline;
 }
 
 .panel-body {
-    padding: 1em 1em 0 1em;
+  padding: 1em 1em 0 1em;
 }
 
 .form-search-filter {
-    margin: 0 0 1em 0;
+  margin: 0 0 1em 0;
 }
 
 .takeSize-filter {
-    margin: 0 1em 0 0.5em;
+  margin: 0 1em 0 0.5em;
 }
 
 .tbl-fixed {
-    table-layout: fixed;
+  table-layout: fixed;
 }
 
 .background-animation-add {
-    padding: 5px;
-    border-radius: 3px;
-    -webkit-animation: changeBack 2s;
-    animation: changeBack 2s;
+  padding: 5px;
+  border-radius: 3px;
+  -webkit-animation: changeBack 2s;
+  animation: changeBack 2s;
 }
 
 .background-animation-remove {
-    -webkit-animation: fadeIn 2s;
-    animation: fadeIn 2s;
+  -webkit-animation: fadeIn 2s;
+  animation: fadeIn 2s;
 }
 
 @-webkit-keyframes changeBack {
-    0% {
-        background-color: white;
-    }
-    50% {
-        background-color: lightgreen;
-    }
-    100% {
-        background-color: white;
-    }
+  0% {
+    background-color: white;
+  }
+  50% {
+    background-color: lightgreen;
+  }
+  100% {
+    background-color: white;
+  }
 }
 
 @keyframes changeBack {
-    0% {
-        background-color: white;
-    }
-    50% {
-        background-color: lightgreen;
-    }
-    100% {
-        background-color: white;
-    }
+  0% {
+    background-color: white;
+  }
+  50% {
+    background-color: lightgreen;
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+.white-noise {
+  margin: 0.5em;
 }
