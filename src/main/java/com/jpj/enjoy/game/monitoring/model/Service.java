@@ -9,7 +9,7 @@ package com.jpj.enjoy.game.monitoring.model;
 //
 //@Entity
 //@Table(name = "customer")
-public class Customer
+public class Services
 {
 
 	//	@Id
@@ -25,11 +25,11 @@ public class Customer
 	//	@Column(name = "active")
 	private boolean active;
 
-	public Customer()
+	public Services()
 	{
 	}
 
-	public Customer(String name, int age)
+	public Services(String name, int age)
 	{
 		this.name = name;
 		this.age = age;
@@ -74,6 +74,6 @@ public class Customer
 	@Override
 	public String toString()
 	{
-		return "Customer [id=" + id + ", name=" + name + ", age=" + age + ", active=" + active + "]";
+		return "Services [id=" + id + ", name=" + name + ", age=" + age + ", active=" + active + "]";
 	}
 }

@@ -7,15 +7,15 @@
 
                         <b-form inline>
                             <b-form-group
-                                    id="take-size"
+                                    id="per-page"
                                     label="Number of message:"
-                                    label-for="take-size"
+                                    label-for="per-page"
                                     label-size="md">
                                 <b-form-select
-                                        :options="sizes"
+                                        :options="pageOptions"
                                         class="ml-3"
                                         size="sm"
-                                        v-model="newTakeSize">
+                                        v-model="perPage">
                                 </b-form-select>
                             </b-form-group>
 
@@ -109,30 +109,19 @@
                     :filter="filter"
                     :items="logData"
                     :per-page="perPage"
-                    :sort-by.sync="sortBy"
-                    :sort-desc.sync="sortDesc"
-                    :sort-direction="sortDirection"
                     @filtered="onFiltered"
                     hover
                     responsive
                     show-empty
                     stacked="md"
-                    striped
-            >
-                <template
-                        slot="Extra"
-                        slot-scope="row">
-                    <b-button
-                            @click="row.toggleDetails"
-                            class="mr-2"
-                            size="sm">
-                        {{ row.detailsShowing ? 'Hide' : 'Show'}}
+                    striped>
+                <template slot="extra"
+                          slot-scope="row">
+                    <b-button size="sm"
+                              class="mr-2"
+                              @click="row.toggleDetails">
+                        {{ row.detailsShowing ? 'Hide' : 'Show' }} Details
                     </b-button>
-                    <b-form-checkbox
-                            @change="row.toggleDetails"
-                            style="display:none"
-                            v-model="row.detailsShowing">
-                    </b-form-checkbox>
                 </template>
 
                 <template
@@ -143,7 +132,7 @@
                             <b-col class="text-sm-left" sm="3"><b>Extra information:</b></b-col>
                         </b-row>
                         <b-row class="mb-1">
-                            <b-col>{{ row.item.Extra.split('\n') }}</b-col>
+                            <b-col>{{ row.item.extra.split('\n') }}</b-col>
                         </b-row>
                     </b-card>
                 </template>
@@ -175,33 +164,67 @@
         name: "LogDataTable",
         data() {
             return {
-                fields: ['Timestamp', 'System', 'CorrelationId', 'LogLevel', 'Message', 'Extra'],
+                fields: [
+                    {
+                        key: 'timestamp',
+                        label: 'Timestamp',
+                        class: Date,
+                        sortable: true
+                    },
+                    {
+                        key: 'system',
+                        label: 'Class',
+                        class: String,
+                        sortable: true
+                    },
+                    {
+                        key: 'correlationId',
+                        label: 'Correlation Id',
+                        class: String,
+                        sortable: true
+                    }, {
+                        key: 'logLevel',
+                        label: 'Log Level',
+                        sortable: true,
+                        class: String
+                    }, {
+                        key: 'message',
+                        label: 'Message',
+                        sortable: false,
+                        class: String
+                    }, {
+                        key: 'extra',
+                        label: 'Extra',
+                        type: String,
+                        sortable: false
+                    }
+                ],
                 logData: [
                     {
-                        Timestamp: new Date().toUTCString(),
-                        System: 'Solid wallet',
-                        CorrelationId: 'aaaaaa',
-                        LogLevel: 'Information',
-                        Message: 'Not so important message',
-                        Extra: 'User authenticated or what ever..',
+                        timestamp: new Date().toUTCString(),
+                        system: 'Solid wallet',
+                        correlationId: 'aaaaaa',
+                        logLevel: 'Information',
+                        message: 'Not so important message',
+                        extra: 'User authenticated or what ever..',
                         _rowVariant: 'success'
                     },
                     {
-                        Timestamp: new Date().toUTCString(),
-                        System: 'GameDAO',
-                        CorrelationId: 'bbbbbb',
-                        LogLevel: 'Warning',
-                        Message: 'Somewhat important message',
-                        Extra: 'This request took waaay to long.. might want to investigate.',
+                        timestamp: new Date().toUTCString(),
+                        system: 'GameDAO',
+                        correlationId: 'bbbbbb',
+                        logLevel: 'Warning',
+                        message: 'Somewhat important message',
+                        extra: 'This request took waaay to long.. might want to investigate.',
                         _rowVariant: 'warning'
                     },
                     {
-                        Timestamp: new Date().toUTCString(),
-                        System: 'GameSession',
-                        CorrelationId: 'cccccc',
-                        LogLevel: 'Error',
-                        Message: 'Might want to take a look at this..',
-                        Extra: 'java.util.ArrayList.rangeCheck(ArrayList.java:657)\n' +
+                        timestamp: new Date().toUTCString(),
+                        system: 'GameSession',
+                        correlationId: 'cccccc',
+                        logLevel: 'Error',
+                        message: 'Might want to take a look at this..',
+                        extra: 'java.util.ArrayList.rangeCheck(ArrayList.java:657)\n' +
                             'java.util.ArrayList.get(ArrayList.java:433)\n' +
                             'com.freespin.tournament.logic.TournamentEngine.payWinners(TournamentEngine.java:288)\n' +
                             'com.freespin.tournament.logic.TournamentEngine.calculateTournamentStandings(TournamentEngine.java:137)\n' +
@@ -209,12 +232,12 @@
                         _rowVariant: 'danger'
                     },
                     {
-                        Timestamp: new Date().toUTCString(),
-                        System: 'Process all filters',
-                        CorrelationId: 'dddddd',
-                        LogLevel: 'Fatal',
-                        Message: 'Dude... shit is going down!!!',
-                        Extra: 'PLNG IS F-ING DOWN! RELEASE THE KRAKEN!!!',
+                        timestamp: new Date().toUTCString(),
+                        system: 'Process all filters',
+                        correlationId: 'dddddd',
+                        logLevel: 'Fatal',
+                        message: 'Dude... shit is going down!!!',
+                        extra: 'PLNG IS F-ING DOWN! RELEASE THE KRAKEN!!!',
                         _rowVariant: 'dark'
                     }
                 ],
@@ -224,8 +247,8 @@
                 pageOptions: [25, 50, 100, 200],
                 dateTo: new Date().toISOString(),
                 dateFrom: '',
-                searchTerm: '',
-                filter: null,
+                logLevelFilter: 'all',
+                filter: null
             }
         },
         methods: {
@@ -237,16 +260,20 @@
             setTotalItems: function () {
                 this.totalRows = this.logData.length;
             },
-            logLevelChanged: function (levelName) {
-
+            logLevelChanged: function (logLevel) {
+                this.logLevelFilter = logLevel;
             },
             filterDate: function () {
 
             },
             onFiltered(filteredItems) {
-                // Trigger pagination to update the number of buttons/pages due to filtering
                 this.totalRows = filteredItems.length;
                 this.currentPage = 1;
+            }
+        },
+        watch: {
+            logLevelFilter: function () {
+                // round-trip to back-end to fetch the new given loglevel
             }
         },
         mounted() {

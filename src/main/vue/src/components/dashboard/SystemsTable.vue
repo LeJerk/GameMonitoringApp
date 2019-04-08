@@ -15,52 +15,41 @@
 </template>
 
 <script>
+    import httpClient from '../../assets/http-connector';
+
     export default {
         name: "SystemsTable",
         data() {
             return {
-                fields: [
-                    {
-                        key: 'system',
-                        label: 'Service',
-                        class: String,
-                        sortable: true
-                    },
-                    {
-                        key: 'activeModules',
-                        class: String,
-                        sortable: true
-                    },
-                    {
-                        key: 'logsPerSecond',
-                        label: 'Logs/s',
-                        sortable: true,
-                        class: String,
-                        variant: 'info'
-                    }, {
-                        key: 'todaysErrorLogs',
-                        label: 'Errors today',
-                        sortable: true,
-                        class: String,
-                        variant: 'danger'
-                    }
-                ],
-                services: [
-                    {system: "Freespin Game", activeModules: 40, logsPerSecond: 4000, todaysErrorLogs: 440},
-                    {system: "Freespin Account", activeModules: 55, logsPerSecond: 1500, todaysErrorLogs: 200},
-                    {system: "Game Filter", activeModules: 100, logsPerSecond: 3300, todaysErrorLogs: 500},
-                    {system: "Game Admin", activeModules: 10, logsPerSecond: 15, todaysErrorLogs: 5},
-                    {system: "Game Datahub", activeModules: 33, logsPerSecond: 300, todaysErrorLogs: 10}
-                ]
+                fields: [],
+                services: []
             }
         },
         methods: {
             showDetails: function (service) {
                 this.$emit('systemChanged', service);
+            },
+            /* eslint-disable no-console */
+            fetchSystems() {
+                httpClient
+                    .get('/services')
+                    .then(response => {
+                        this.services = response.data;
+                        this.showDetails(this.services[0]);
+                    });
+            },
+            fetchFields() {
+                httpClient
+                    .get('/services/fields')
+                    .then(response => {
+                        this.fields = response.data;
+                    });
             }
+            /* eslint-enable no-console */
         },
         mounted() {
-            this.showDetails(this.services[0]);
+            this.fetchSystems();
+            this.fetchFields();
         },
     }
 </script>
