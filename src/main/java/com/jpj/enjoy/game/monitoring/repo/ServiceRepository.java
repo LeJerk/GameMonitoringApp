@@ -4,7 +4,7 @@
 //
 //import org.springframework.data.repository.CrudRepository;
 //
-//import Services;
+//import Service;
 //
 //public interface ServiceRepository extends CrudRepository<Service, Long> {
 //	List<Service> findByName(string name);

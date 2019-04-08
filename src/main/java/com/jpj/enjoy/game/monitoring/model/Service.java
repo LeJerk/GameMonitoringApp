@@ -6,74 +6,64 @@ package com.jpj.enjoy.game.monitoring.model;
 //import javax.persistence.GenerationType;
 //import javax.persistence.Id;
 //import javax.persistence.Table;
-//
+
 //@Entity
 //@Table(name = "customer")
-public class Services
+public class Service
 {
 
 	//	@Id
 	//	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+    // private long id;
 
-	//	@Column(name = "name")
-	private String name;
+    //	@Column(name = "system")
+    private String system;
 
-	//	@Column(name = "age")
-	private int age;
+    //	@Column(name = "activeModules")
+    private int activeModules;
 
-	//	@Column(name = "active")
-	private boolean active;
+    private int logsPerSecond;
 
-	public Services()
-	{
-	}
+    private int todaysErrorLogs;
 
-	public Services(String name, int age)
-	{
-		this.name = name;
-		this.age = age;
-		this.active = false;
-	}
+    public Service() {
+    }
 
-	public long getId()
-	{
-		return id;
-	}
+    public Service(String system, int activeModules) {
+        this.system = system;
+        this.activeModules = activeModules;
+    }
 
-	public String getName()
-	{
-		return this.name;
-	}
+    public String getSystem() {
+        return system;
+    }
 
-	public void setName(String name)
-	{
-		this.name = name;
-	}
+    public void setSystem(String system) {
+        this.system = system;
+    }
 
-	public int getAge()
-	{
-		return this.age;
-	}
+    public int getActiveModules() {
+        return activeModules;
+    }
 
-	public void setAge(int age)
-	{
-		this.age = age;
-	}
+    public void setActiveModules(int activeModules) {
+        this.activeModules = activeModules;
+    }
 
-	public boolean isActive()
-	{
-		return active;
-	}
+    public int getLogsPerSecond() {
+        return logsPerSecond;
+    }
 
-	public void setActive(boolean active)
-	{
-		this.active = active;
-	}
+    public void setLogsPerSecond(int logsPerSecond) {
+        this.logsPerSecond = logsPerSecond;
+    }
 
-	@Override
-	public String toString()
-	{
-		return "Services [id=" + id + ", name=" + name + ", age=" + age + ", active=" + active + "]";
-	}
+    public int getTodaysErrorLogs() {
+        return todaysErrorLogs;
+    }
+
+    public void setTodaysErrorLogs(int todaysErrorLogs) {
+        this.todaysErrorLogs = todaysErrorLogs;
+    }
+
 }
