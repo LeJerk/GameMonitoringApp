@@ -1,2 +1,2 @@
 # GameMonitoringApp
-Monitoring funky stuff for the game vertical
+Proof of concept of an internal administator tool, for overviewing and searching logged messages accross different services within your platform.
